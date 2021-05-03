@@ -2,7 +2,7 @@
 
 namespace RhythmGamesBot.Core
 {
-    public class Class1
+    public class RhythmGamesBot
     {
     }
 }
