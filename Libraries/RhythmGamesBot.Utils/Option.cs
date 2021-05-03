@@ -18,26 +18,32 @@ namespace RhythmGamesBot.Utils
             this._isSome = true;
         }
 
+        // Creates a new `Option<T>` that does contain a value.
         public static Option Some(T value)
         {
             return new Option(value);
         }
 
+        // Creates a new `Option<T>` that does not contain a value.
         public static Option None() 
         {
             return new Option();
         }
 
+        // Returns whether the current `Option<T>` is a `Some` (which contains a value).
         public bool IsSome() 
         {
             return this._isSome;
         }
 
+        // Returns whether the current `Option<T>` is a `None` (which does not contain a value).
         public bool IsNone()
         {
             return !this._isSome;
         }
 
+        // Unwraps the current `Option<T>`, retrieves the underlying `T` if the current `Option<T>` contains a value.
+        // If the current `Option<T>` does not contain a value, throw an `InvalidOperationException`.
         public T Unwrap() 
         {
             return this._isSome switch 
@@ -47,6 +53,8 @@ namespace RhythmGamesBot.Utils
             };
         }
 
+        // Replaces the underlying `T` with the specified `value` parameter. Returns the old value if the current `Option<T>` before replacing
+        // contains a value, otherwise returns an `Option<T>.None`.
         public Option<T> Replace(T value)
         {
             if (this._isSome) 
