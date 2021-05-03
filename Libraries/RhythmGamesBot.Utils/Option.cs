@@ -7,11 +7,6 @@ namespace RhythmGamesBot.Utils
         private bool _isSome;
         private T _value;
 
-        private Option() 
-        {
-            this._isSome = false;
-        }
-
         private Option(T value)
         {
             this._value = value;
@@ -19,16 +14,10 @@ namespace RhythmGamesBot.Utils
         }
 
         // Creates a new `Option<T>` that does contain a value.
-        public static Option Some(T value)
-        {
-            return new Option(value);
-        }
+        public static Option Some(T value) => new Option(value);
 
         // Creates a new `Option<T>` that does not contain a value.
-        public static Option None() 
-        {
-            return new Option();
-        }
+        public static Option None => default;
 
         // Returns whether the current `Option<T>` is a `Some` (which contains a value).
         public bool IsSome() 
