@@ -8,7 +8,7 @@ namespace RhythmGamesBot.Core
 {
     public class RhythmGamesBot
     {
-        private static Option<DiscordClient> BotInstance { get; set; }
+        private static DiscordClient? BotInstance { get; set; }
         private const DiscordIntents Intents = DiscordIntents.All;
 
         public RhythmGamesBot(Option<DiscordConfiguration> discordConfiguration)
@@ -19,7 +19,7 @@ namespace RhythmGamesBot.Core
                 // the reasoning behind the Optional configuration is that we can tweak the configuration for testing purposes.
             };
 
-            BotInstance = Option<DiscordClient>.Some(new DiscordClient(configuration));
+            BotInstance = new DiscordClient(configuration);
         }
     }
 }
