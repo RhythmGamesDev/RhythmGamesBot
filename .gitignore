@@ -395,3 +395,4 @@ FodyWeavers.xsd
 
 # Editor-based Rest Client
 .idea/httpRequests
+Libraries/RhythmGamesBot.Core/BotSecrets.cs
