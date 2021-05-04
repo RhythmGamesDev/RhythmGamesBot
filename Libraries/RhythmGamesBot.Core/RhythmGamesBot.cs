@@ -8,7 +8,7 @@ namespace RhythmGamesBot.Core
 {
     public class RhythmGamesBot
     {
-        private static DiscordClient? BotInstance { get; set; }
+        private static DiscordClient BotInstance { get; set; }
         private const DiscordIntents Intents = DiscordIntents.All;
 
         public RhythmGamesBot(Option<DiscordConfiguration> discordConfiguration)
